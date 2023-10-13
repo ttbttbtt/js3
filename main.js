@@ -1,8 +1,6 @@
 let phone = document.getElementById("phone")
 phone.addEventListener("input", mask)
 
-let butt = document.getElementsByClassName("butt")
-
 function mask() {
     
     // \D : соответствует любому символу, который не является цифрой
@@ -44,6 +42,10 @@ function mask() {
     }
 }
 
+//-------------------------------------------------------
+
+let butt = document.getElementsByClassName("butt")[0]
+console.log('butt-'+butt);
 butt.addEventListener("click", check)
 
 function check() {    
@@ -52,6 +54,9 @@ function check() {
     let ans
     if ( Numv.substring(1, 4) == '998' ) {
         ans = 'Это узбекский номер телефона'
+    }
+    else if (Numv.substring(1, 4) == ''){
+        ans = 'Не введён номер телефона'
     }
     else {
         ans = 'Это не узбекский номер телефона'
